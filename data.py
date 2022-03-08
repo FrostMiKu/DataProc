@@ -27,13 +27,13 @@ class Data:
         return self.t[row]
 
     def col(self, col:int) -> np.array:
-        return self.getArray(lambda x:x[col])
+        return self.t[:,col]
 
     def head(self, row:int):
-        return Data([i for i in self.t[:row]])
+        return Data(self.t[:row])
     
     def tail(self, row:int):
-        return Data([i for i in self.t[-row:]])
+        return Data(self.t[-row:])
 
     def window(self, pos1:Tuple[int, int], pos2:Tuple[int, int]):
         return Data(self.t[pos1[0]:pos2[0],pos1[1]:pos2[1]])
