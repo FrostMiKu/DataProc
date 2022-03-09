@@ -6,9 +6,6 @@ class Parser:
         self.preprocess:Callable[[str],str] = lambda x: x.strip()
         self.postprocess:Callable[[list],list] = lambda x: x
 
-    # def preprocess(line:str) -> str:
-    #     return line.strip()
-
     def parse(self, lines:List[str], offset:int, delimiter:str=' ') -> Data:
         return Data(list(map(lambda x: self.postprocess(self.preprocess(x).split(delimiter)), lines[offset:])))
 

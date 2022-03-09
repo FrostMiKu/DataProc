@@ -1,7 +1,8 @@
-' 类表格文本数据处理框架 '
+'Text label processing framework'
 
 __author__ = 'Lethon'
 __version__ = '0.1.0'
+__all__ = ["Parser", "Data"]
 
 import DataProc.parser
 import DataProc.data
