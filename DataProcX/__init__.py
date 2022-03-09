@@ -1,4 +1,4 @@
-'Text label processing framework'
+'Text label processing framework.'
 
 __author__ = 'Lethon'
 __version__ = '0.1.0'

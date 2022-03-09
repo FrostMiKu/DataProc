@@ -3,3 +3,7 @@ Output
 label
 *tmp*
 *temp*
+*.egg-info
+dist
+build
+dev.py

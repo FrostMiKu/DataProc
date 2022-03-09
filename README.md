@@ -1,6 +1,6 @@
-# DataProc
+# DataProcX
 
-Text label processing framework
+Text label processing framework.
 
 
 ## Example
