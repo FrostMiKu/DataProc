@@ -1,4 +1,4 @@
-from typing import Callable, Tuple
+from typing import Callable, Tuple, Any
 import numpy as np
 
 class Data:
@@ -11,10 +11,10 @@ class Data:
     def value(self) -> np.array:
         return self.t
 
-    def getArray(self, func:Callable) -> list:
+    def getArray(self, func:Callable[[np.array],Any]) -> list:
         return np.array(list(map(func,self.t)))
 
-    def getSet(self, func:Callable) -> set:
+    def getSet(self, func:Callable[[np.array],Any]) -> set:
         l = set()
         for line in self.t:
             l.add(func(line))

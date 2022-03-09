@@ -1,12 +1,16 @@
-from typing import List
+from typing import List, Callable
 from DataProc.data import Data
 
 class Parser:
     def __init__(self) -> None:
-        pass
+        self.preprocess:Callable[[str],str] = lambda x: x.strip()
+        self.postprocess:Callable[[list],list] = lambda x: x
 
-    def parse(self, text:List[str], offset:int, delimiter:str) -> Data:
-        return Data(list(map(lambda x: x[:-1].split(delimiter) if x[-1]=='\n' else x.split(delimiter), text[offset:])))
+    # def preprocess(line:str) -> str:
+    #     return line.strip()
+
+    def parse(self, lines:List[str], offset:int, delimiter:str=' ') -> Data:
+        return Data(list(map(lambda x: self.postprocess(self.preprocess(x).split(delimiter)), lines[offset:])))
 
     def loadFile(self, path:str, offset:int, delimiter:str) -> Data:
         with open(path) as f:
