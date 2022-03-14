@@ -1,5 +1,5 @@
 from typing import List, Callable
-from DataProc.data import Data
+from DataProcX.data import Data
 
 class Parser:
     def __init__(self) -> None:

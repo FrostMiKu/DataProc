@@ -21,7 +21,7 @@ SSB01120011 /data3/A07/spoof/SSB01120011.wav True
 
 main.py
 ```python
-import DataProc as dp
+import DataProcX as dp
 
 p = dp.Parser()
 
